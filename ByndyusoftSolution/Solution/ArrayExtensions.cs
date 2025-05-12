@@ -1,27 +1,8 @@
-﻿using System;
-
-
+﻿
 namespace ByndyusoftSolution.Solution
 {
     public static class ArrayExtensions
     {
-        public static int SumTwoNumbers(this int[] numbers)
-        {
-            if (numbers == null || numbers.Length < 2)
-            {
-                throw new ArgumentException($"Array {nameof(numbers)} must contain at least 2 elements.");
-            }
-
-            if(numbers.Length == 2)
-            {
-                return numbers[0] + numbers[1];
-            }
-
-            int[] sorted = numbers.SortedDijkstra(true);
-
-            return sorted[0] + sorted[1];            
-        }
-
         public static int[] SortedDijkstra(this int[] array, bool safe)
         {
             if (array == null)
